@@ -579,6 +579,8 @@ void WiFiManager::handleWifiSave() {
   page += FPSTR(HTTP_SAVED);
   page += FPSTR(HTTP_END);
 
+  // TODO Lock CORS to domain
+  server->sendHeader("Access-Control-Allow-Origin", "*");
   server->send(200, "text/html", page);
 
   DEBUG_WM(F("Sent wifi save page"));
