@@ -353,9 +353,9 @@ void WiFiManager::setBreakAfterConfig(boolean shouldBreak) {
 /** Handle root or redirect to captive portal */
 void WiFiManager::handleRoot() {
   DEBUG_WM(F("Handle root"));
-  if (captivePortal()) { // If caprive portal redirect instead of displaying the page.
-    return;
-  }
+  // if (captivePortal()) { // If caprive portal redirect instead of displaying the page.
+  //   return;
+  // }
 
   String page = FPSTR(HTTP_HEAD);
   page.replace("{v}", "Options");
@@ -712,9 +712,9 @@ void WiFiManager::handleReset() {
 }*/
 
 void WiFiManager::handleNotFound() {
-  if (captivePortal()) { // If captive portal redirect instead of displaying the error page.
-    return;
-  }
+  // if (captivePortal()) { // If captive portal redirect instead of displaying the error page.
+  //   return;
+  // }
   String message = "File Not Found\n\n";
   message += "URI: ";
   message += server->uri();
